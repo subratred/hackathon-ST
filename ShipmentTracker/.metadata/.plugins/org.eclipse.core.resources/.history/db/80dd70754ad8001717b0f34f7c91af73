@@ -1,0 +1,12 @@
+package com.hackathon.ShipmentTracker.controller;
+
+@RestController
+public class Controller {
+
+	@RequestMapping("/test")
+	public String test() throws ClassNotFoundException, SQLException{
+//		Object object=prodDetailsRepo.findAll();
+//		System.out.println(object);
+		return "FETCH SUCCESSFUL";
+	}
+}
