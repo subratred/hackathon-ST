@@ -1,11 +1,13 @@
 package com.hackathon.ShipmentTracker.controller;
 
+import java.sql.SQLException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hackathon.ShipmentTracker.dao.ShipmentTrackDAO;
 import com.hackathon.ShipmentTracker.model.OrderStats;
 import com.hackathon.ShipmentTracker.model.ServiceResponse;
 import com.hackathon.ShipmentTracker.service.ShipmentTrackService;
@@ -14,9 +16,12 @@ import com.hackathon.ShipmentTracker.service.ShipmentTrackService;
 public class Controller {
 	@Autowired
 	ShipmentTrackService shipmentTrackService;
+	@Autowired
+	ShipmentTrackDAO dao;
 
 	@RequestMapping(value="/test",produces="application/json",method=RequestMethod.GET)
-	public String gettest(){
+	public String gettest() throws ClassNotFoundException, SQLException{
+		dao.getConnection();
 		System.out.println();
 		return "FETCH 123";
 	}

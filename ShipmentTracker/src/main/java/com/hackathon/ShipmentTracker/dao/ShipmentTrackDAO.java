@@ -11,7 +11,7 @@ import com.hackathon.ShipmentTracker.model.ProdTrackDetails;
 
 public interface ShipmentTrackDAO {
 
-	public String getConnection() throws ClassNotFoundException;
+	public String getConnection() throws ClassNotFoundException, SQLException;
 	public Object getData() throws ClassNotFoundException, SQLException;
 	
 	public List<Object> fetchDistinctLocation() throws Exception;
